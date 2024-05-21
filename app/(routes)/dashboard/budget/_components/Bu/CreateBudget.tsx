@@ -19,7 +19,7 @@ import { Budgets } from '@/utils/schema';
 import { useUser } from '@clerk/nextjs';
 import { toast } from 'sonner';
 
-const CreateBudget = () => {
+const CreateBudget = ({ refreshData }: any) => {
     const { user } = useUser();
 
     const [BudgetName, setBudgetName] = useState('s');
@@ -37,7 +37,8 @@ const CreateBudget = () => {
             }).returning({ insertedId: Budgets.id });
 
             if (result) {
-                toast('New Budget Created Sucessfully!');
+                refreshData();
+                toast.success('New Budget Created Sucessfully!');
             }
         } catch (error) {
             toast.error('Oops something went wrong while creating the budget.');
