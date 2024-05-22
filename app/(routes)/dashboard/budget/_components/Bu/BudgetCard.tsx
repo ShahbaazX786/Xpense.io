@@ -1,7 +1,14 @@
+import Link from "next/link";
 
 const BudgetCard = (budget: any) => {
+
+    const calculateProgress = () => {
+        const percentage = (budget.totalSpend / budget.amount) * 100;
+        return percentage.toFixed(2);
+    }
+
     return (
-        <div className="p-5 border rounded-lg hover:shadow-lg cursor-pointer">
+        <Link href={`/dashboard/expenses/${budget?.id}`} className="p-5 border rounded-lg hover:shadow-lg cursor-pointer">
             <div className="flex gap-2 items-center justify-center">
                 <div className="flex gap-2 items-center">
                     <h2 className="text-2xl bg-slate-100 rounded-full px-4 p-3">{budget.icon}</h2>
@@ -18,10 +25,10 @@ const BudgetCard = (budget: any) => {
                     <p className="text-base text-slate-800">Remaining: ${budget.amount - budget.totalSpend}</p>
                 </div>
                 <div className="w-full bg-slate-300 rounded-full">
-                    <div className="w-1/4 bg-primary rounded-full"></div>
+                    <div className=" bg-primary rounded-full" style={{ width: `${calculateProgress()}%` }}></div>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 
