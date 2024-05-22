@@ -24,7 +24,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
             .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress!));
 
         if (budgets?.length === 0) {
-            router.replace('/dashboard/budgets');
+            router.replace('/dashboard/budget');
         }
     }
 
