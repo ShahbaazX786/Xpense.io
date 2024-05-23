@@ -10,7 +10,7 @@ import BudgetCard from "../../budget/_components/Bu/BudgetCard";
 import AddExpense from "./_components/AddExpense";
 import ExpenseListTable from "./_components/ExpenseListTable";
 import { Button } from "@/components/ui/button";
-import { Trash } from "lucide-react";
+import { PenBox, Trash } from "lucide-react";
 import {
     AlertDialog,
     AlertDialogAction,
@@ -23,6 +23,7 @@ import {
     AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
 import { useRouter } from "next/navigation";
+import EditBudget from "./_components/EditBudget";
 
 const Expense = ({ params }: any) => {
 
@@ -67,10 +68,10 @@ const Expense = ({ params }: any) => {
     const deleteBudget = async () => {
         try {
             // this is done first to avoid foreign key constraints error issues.
-            const deleteExpenseRes = await db.delete(Expenses).where(eq(Expenses.budgetId,params.id)).returning();
-            if(deleteExpenseRes){
+            const deleteExpenseRes = await db.delete(Expenses).where(eq(Expenses.budgetId, params.id)).returning();
+            if (deleteExpenseRes) {
                 const deleteBudgetRes = await db.delete(Budgets).where(eq(Budgets.id, params.id)).returning();
-                if (deleteBudgetRes){
+                if (deleteBudgetRes) {
                     toast.success('Budgets deleted successfully');
                     router.replace('/dashboard/budget');
                 }
@@ -85,24 +86,28 @@ const Expense = ({ params }: any) => {
     return (
         <div className="p-10">
             <h2 className="text-2xl font-bold justify-between flex items-center">My Expenses
-                <AlertDialog>
-                    <AlertDialogTrigger asChild>
-                        <Button className="flex gap-2" variant={"destructive"}><Trash />Delete Budget</Button>
-                    </AlertDialogTrigger>
-                    <AlertDialogContent>
-                        <AlertDialogHeader>
-                            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
-                            <AlertDialogDescription>
-                                This action cannot be undone. This will permanently delete your selected Budget
-                                including all the added expenses from our servers.
-                            </AlertDialogDescription>
-                        </AlertDialogHeader>
-                        <AlertDialogFooter>
-                            <AlertDialogCancel>Cancel</AlertDialogCancel>
-                            <AlertDialogAction onClick={()=>deleteBudget()}>Continue</AlertDialogAction>
-                        </AlertDialogFooter>
-                    </AlertDialogContent>
-                </AlertDialog>
+                <div className="flex gap-2 items-center">
+                    <EditBudget budgetInfo={BudgetInfo} refreshData={() => getBudgetInfo()} />
+
+                    <AlertDialog>
+                        <AlertDialogTrigger asChild>
+                            <Button className="flex gap-2" variant={"destructive"}><Trash />Delete Budget</Button>
+                        </AlertDialogTrigger>
+                        <AlertDialogContent>
+                            <AlertDialogHeader>
+                                <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                                <AlertDialogDescription>
+                                    This action cannot be undone. This will permanently delete your selected Budget
+                                    including all the added expenses from our servers.
+                                </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter>
+                                <AlertDialogCancel>Cancel</AlertDialogCancel>
+                                <AlertDialogAction onClick={() => deleteBudget()}>Continue</AlertDialogAction>
+                            </AlertDialogFooter>
+                        </AlertDialogContent>
+                    </AlertDialog>
+                </div>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 mt-6 gap-5">
                 {BudgetInfo ? (<BudgetCard budget={BudgetInfo} />) : (<div className="w-full bg-slate-200 rounded-lg h-[8.5rem] animate-pulse"></div>)}
