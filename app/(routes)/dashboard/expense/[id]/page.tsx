@@ -3,16 +3,18 @@
 import { db } from "@/utils/dbConfig";
 import { Budgets, Expenses } from "@/utils/schema";
 import { useUser } from "@clerk/nextjs";
-import { eq, sql, getTableColumns } from "drizzle-orm";
+import { eq, sql, getTableColumns, desc } from "drizzle-orm";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import BudgetCard from "../../budget/_components/Bu/BudgetCard";
 import AddExpense from "./_components/AddExpense";
+import ExpenseListTable from "./_components/ExpenseListTable";
 
 const Expense = ({ params }: any) => {
 
     const { user } = useUser();
     const [BudgetInfo, setBudgetInfo] = useState({});
+    const [ExpenseList, setExpenseList] = useState([]);
 
     useEffect(() => {
         user && getBudgetInfo();
@@ -29,6 +31,20 @@ const Expense = ({ params }: any) => {
             if (result) {
                 setBudgetInfo(result[0]);
             }
+            getExpenseList();
+        } catch (error) {
+            toast.error('Oops something went wrong');
+            console.error('ERROR_WHILE_FETCHING_BUDGET_LIST', error);
+        }
+    }
+
+    const getExpenseList = async () => {
+        try {
+            const result = await db.select().from(Expenses).where(eq(Expenses.id, params.id)).orderBy(desc(Expenses.id));
+
+            if (result) {
+                setExpenseList(result as []);
+            }
         } catch (error) {
             toast.error('Oops something went wrong');
             console.error('ERROR_WHILE_FETCHING_BUDGET_LIST', error);
@@ -41,7 +57,11 @@ const Expense = ({ params }: any) => {
             <div className="grid grid-cols-1 md:grid-cols-2 mt-6 gap-5">
                 {BudgetInfo ? (<BudgetCard budget={BudgetInfo} />) : (<div className="w-full bg-slate-200 rounded-lg h-[8.5rem] animate-pulse"></div>)}
             </div>
-            <AddExpense paramId={params.id} user={user} refreshData={()=>getBudgetInfo} />
+            <AddExpense paramId={params.id} user={user} refreshData={() => getBudgetInfo()} />
+            <div className="mt-4">
+                <h2 className="font-bold text-lg">Latest Expenses</h2>
+                <ExpenseListTable data={ExpenseList} refreshData={() => getBudgetInfo()} />
+            </div>
         </div>
     )
 }

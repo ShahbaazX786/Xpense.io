@@ -4,6 +4,7 @@ import { db } from "@/utils/dbConfig"
 import { Budgets, Expenses } from "@/utils/schema"
 import { useState } from "react"
 import { toast } from "sonner"
+import moment from "moment";
 
 const AddExpense = ({ paramId, user, refreshData }: any) => {
 
@@ -16,7 +17,7 @@ const AddExpense = ({ paramId, user, refreshData }: any) => {
                 name: name,
                 amount: amount,
                 budgetId: paramId!,
-                createdAt: user?.primaryEmailAddress?.emailAddress!
+                createdAt: moment().format('DD/MM/yyy'),
             }).returning({ insertedId: Budgets.id })
 
             if (result) {
