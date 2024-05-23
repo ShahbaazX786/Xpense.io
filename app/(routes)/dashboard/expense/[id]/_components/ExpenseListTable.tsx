@@ -15,7 +15,7 @@ import { Trash } from "lucide-react";
 import { toast } from "sonner";
 
 
-const ExpenseListTable = ({ ExpenseList, refreshData }: any) => {
+const ExpenseListTable = ({ data, refreshData }: any) => {
 
     const deleteExpense = async (id: any) => {
         try {
@@ -43,7 +43,7 @@ const ExpenseListTable = ({ ExpenseList, refreshData }: any) => {
                     </TableRow>
                 </TableHeader>
                 <TableBody>
-                    {ExpenseList.map((expense: any, index: any) => (
+                    {data.map((expense: any, index: any) => (
                         <TableRow key={index}>
                             <TableCell>{expense.id}</TableCell>
                             <TableCell className="font-medium">{expense.name}</TableCell>
