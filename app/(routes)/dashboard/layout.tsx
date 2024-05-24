@@ -1,13 +1,13 @@
 'use client';
 
 import { db } from "@/utils/dbConfig";
-import DashboardHeader from "./_components/dashboardHeader";
-import Sidenav from "./_components/sidenav";
 import { Budgets } from "@/utils/schema";
-import { eq } from "drizzle-orm";
 import { useUser } from "@clerk/nextjs";
-import { useEffect } from "react";
+import { eq } from "drizzle-orm";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import SideNav from "./_components/SideNav";
+import DashboardHeader from "./_components/DashboardHeader";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     const { user } = useUser();
@@ -32,7 +32,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     return (
         <div>
             <div className="fixed md:w-64 hidden md:block">
-                <Sidenav />
+                <SideNav />
             </div>
             <div className="md:ml-64">
                 <DashboardHeader />

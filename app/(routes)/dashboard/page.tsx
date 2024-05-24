@@ -1,18 +1,20 @@
 'use client';
 
-import { useUser } from "@clerk/nextjs";
-import InfoCard from "./_components/InfoCard";
 import { db } from "@/utils/dbConfig";
 import { Budgets, Expenses } from "@/utils/schema";
-import { getTableColumns, sql, eq, desc } from "drizzle-orm";
-import { useState, useEffect } from "react";
+import { useUser } from "@clerk/nextjs";
+import { desc, eq, getTableColumns, sql } from "drizzle-orm";
+import { useEffect, useState } from "react";
 import { toast } from "sonner";
+import BarCharts from "./_components/BarCharts";
+import InfoCard from "./_components/InfoCard";
+import BudgetCard from "./budget/_components/Bu/BudgetCard";
+import ExpenseListTable from "./expense/[id]/_components/ExpenseListTable";
 
 const Dashboard = () => {
     const { user } = useUser();
-
-
     const [BudgetList, setBudgetList] = useState([]);
+    const [ExpenseList, setExpenseList] = useState([]);
 
     useEffect(() => {
         getBudgetList();
@@ -33,6 +35,25 @@ const Dashboard = () => {
             toast.error('Oops something went wrong');
             console.error('ERROR_WHILE_FETCHING_BUDGET_LIST', error);
         }
+        getExpenseList();
+    }
+
+    const getExpenseList = async () => {
+        try {
+            const result = await db.select({
+                id:Expenses.id,
+                name:Expenses.name,
+                amount:Expenses.amount,
+                createdAt:Expenses.createdAt
+            }).from(Budgets).rightJoin(Expenses, eq(Budgets.id, Expenses.budgetId)).where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress!)).orderBy(desc(Budgets.id));
+
+            if (result) {
+                setExpenseList(result as []);
+            }
+        } catch (error) {
+            toast.error('Oops something went wrong');
+            console.error('ERROR_WHILE_FETCHING_EXPENSE_LIST', error);
+        }
     }
 
     return (
@@ -40,6 +61,18 @@ const Dashboard = () => {
             <h2 className="font-bold text-3xl">Hi, {user?.fullName} <span className="animate-bounce">👋</span></h2>
             <p className="text-gray-500">Here&apos;s what happening with your money, Let&apos;s manage your Expense</p>
             <InfoCard data={BudgetList} />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 h-full">
+                <div className="md:col-span-2 mt-8 shadow-sm">
+                    <BarCharts data={BudgetList} />
+                    <ExpenseListTable data={ExpenseList} refreshData={()=>getBudgetList()}/>
+                </div>
+                <div className="mt-8 h-full max-h-[500px] overflow-y-auto grid gap-5">
+                    <h2 className="font-bold text-lg">Recent Budgets</h2>
+                    {BudgetList.map((budget, index) => (
+                        <BudgetCard key={index} budget={budget} />
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }

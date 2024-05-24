@@ -29,7 +29,8 @@ const ExpenseListTable = ({ data, refreshData }: any) => {
         }
     }
     return (
-        <div className="mt-3">
+        <div className="mt-4">
+            <h2 className="font-bold text-lg mb-4">Latest Expenses</h2>
             <Table>
                 <TableCaption >A list of your recent invoices.</TableCaption>
                 <TableHeader>
