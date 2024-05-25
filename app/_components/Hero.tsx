@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Newsletter from "./Newsletter";
 
 const Hero = () => {
     return (
@@ -12,6 +13,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
+            <Newsletter />
         </section>
     )
 }
