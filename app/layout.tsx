@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import { Toaster } from '@/components/ui/sonner';
+import ThemeProvider from './_components/ThemeProvider';
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -21,7 +22,13 @@ export default function RootLayout({
       <html lang="en">
         <body className={outfit.className}>
           <Toaster />
-          {children}
+          <ThemeProvider
+            attribute='class'
+            defaultTheme='system'
+            enableSystem
+            disableTransitionOnChange>
+            {children}
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>

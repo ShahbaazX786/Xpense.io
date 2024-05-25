@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import AuthenticatedButtons from './AuthenticatedButtons';
+import { DarkModeToggleButton } from './DarkModeToggleButton';
 
 const Header = () => {
     return (
@@ -14,7 +15,10 @@ const Header = () => {
                     Expense.io
                 </span>
             </div>
-            <AuthenticatedButtons />
+            <div className='flex justify-center items-center gap-5'>
+                <DarkModeToggleButton />
+                <AuthenticatedButtons />
+            </div>
         </div>
     )
 }
