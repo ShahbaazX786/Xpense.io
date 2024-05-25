@@ -4,7 +4,7 @@ import React from 'react'
 
 const Newsletter = () => {
     return (
-        <section className="container">
+        <section className="container my-10 py-20">
             <div className='flex flex-col justify-center items-center'>
                 <strong className="block text-center text-xl font-bold text-gray-900 sm:text-3xl">
                     Want us to email you with the latest blockbuster news?

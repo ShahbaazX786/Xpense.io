@@ -116,3 +116,27 @@ export const QuickLinks = [
     }
   ],
 ] as const;
+
+
+export const Faqs = [
+  {
+    question: 'What is Expense.io',
+    answer: 'Expense.io is a comprehensive SaaS application that helps users manage their finances effectively. It offers budgeting tools, real-time expenditure tracking, personalized savings suggestions, and notifications for over-budget spending. Additionally, it provides detailed financial analytics to help users gain insights and make informed financial decisions, ensuring better control over their money.'
+  },
+  {
+    question: 'How can Expense.io help me?',
+    answer: 'Expense.io helps you manage finances by offering budgeting tools, real-time expense tracking, savings suggestions, over-budget alerts, and detailed financial analytics.'
+  },
+  {
+    question: 'Is the Membership required to get started?',
+    answer: 'No, you can start it free however if you need advanced analytics and information then you are always welcome to upgrade your membership.'
+  },
+  {
+    question: 'How secure is my information?',
+    answer: 'Expense.io ensures your information is highly secure with advanced encryption, regular security audits, and strict privacy policies. Your data is protected and kept confidential at all times.'
+  },
+  {
+    question: 'How to contact support in case of any urgent query?',
+    answer: 'For urgent queries, you can contact support through the dedicated help center within the Expense.io app or via email at support@expense.io.'
+  },
+] as const;

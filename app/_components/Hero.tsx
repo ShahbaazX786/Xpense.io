@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Newsletter from "./Newsletter";
+import FAQ from "./FAQ";
 
 const Hero = () => {
     return (
@@ -13,6 +14,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
+            <FAQ/>
             <Newsletter />
         </section>
     )
