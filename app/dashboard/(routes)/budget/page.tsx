@@ -1,4 +1,4 @@
-import PreviousButton from '../_components/PreviousButton';
+import PreviousButton from '../../_components/PreviousButton';
 import BudgetList from './_components/Bu/BudgetList';
 
 const Budgets = () => {

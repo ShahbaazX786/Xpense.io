@@ -8,8 +8,8 @@ import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import BarCharts from "./_components/BarCharts";
 import InfoCard from "./_components/InfoCard";
-import BudgetCard from "./budget/_components/Bu/BudgetCard";
-import ExpenseListTable from "./expense/[id]/_components/ExpenseListTable";
+import ExpenseListTable from "./(routes)/expense/[id]/_components/ExpenseListTable";
+import BudgetCard from "./(routes)/budget/_components/Bu/BudgetCard";
 
 const Dashboard = () => {
     const { user } = useUser();
