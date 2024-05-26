@@ -3,34 +3,9 @@ import PreviousButton from '../../_components/PreviousButton';
 import { CheckCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import { MembershipDetails } from '@/lib/constants';
 
 const Upgrade = () => {
-
-    const MembershipDetails = [
-        {
-            type: 'Starter',
-            price: '0$',
-            features: [
-                'Data Encryption',
-                'Add Budgets',
-                'Add Expenses',
-                'Utilize Dashboard',
-                'Customer Support',
-            ]
-        },
-        {
-            type: 'Pro',
-            price: '30$',
-            features: [
-                'Data Encryption',
-                'Add Budgets',
-                'Add Expenses',
-                'Analytics Tab unlocked',
-                'Dark Mode',
-                'Savings Calculator',
-            ]
-        }
-    ]
 
     return (
         <div className='p-10'>
@@ -39,7 +14,7 @@ const Upgrade = () => {
             <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:items-center md:gap-8">
                     {MembershipDetails.map((plan, index) => (
-                        <div key={index} className='text-center border ring-1 shadow-sm rounded-lg p-10 hover:scale-105 hover:ring-2 hover:bg-zinc-50 transition-all'>
+                        <div key={index} className='text-center border ring-1 shadow-sm rounded-lg p-10 hover:scale-105 hover:ring-2 hover:bg-zinc-50 transition-all ease-linear'>
                             <h2 className="text-lg font-medium text-gray-900">
                                 {plan.type}
                                 <span className="sr-only">Plan</span>

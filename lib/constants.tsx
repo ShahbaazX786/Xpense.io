@@ -140,3 +140,30 @@ export const Faqs = [
     answer: 'For urgent queries, you can contact support through the dedicated help center within the Expense.io app or via email at support@expense.io.'
   },
 ] as const;
+
+
+export const MembershipDetails = [
+  {
+    type: 'Starter',
+    price: '0$',
+    features: [
+      'Data Encryption',
+      'Add Budgets',
+      'Add Expenses',
+      'Utilize Dashboard',
+      'Customer Support',
+    ]
+  },
+  {
+    type: 'Pro',
+    price: '30$',
+    features: [
+      'Data Encryption',
+      'Add Budgets',
+      'Add Expenses',
+      'Analytics Tab unlocked',
+      'Dark Mode',
+      'Savings Calculator',
+    ]
+  }
+] as const;
