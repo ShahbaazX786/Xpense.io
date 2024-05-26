@@ -18,7 +18,16 @@ const SideNav = () => {
     const pathName = usePathname();
     return (
         <div className="h-screen p-5 border shadow-md">
-            <Image src={'./logo.svg'} alt="logo" width={80} height={60} />
+            <div className='flex justify-start items-center gap-2'>
+                <Image
+                    src={'/Logo.svg'}
+                    alt='Logo'
+                    width={50}
+                    height={50} />
+                <span className='font-bold text-2xl'>
+                    Expense.io
+                </span>
+            </div>
             <div className="mt-5">
                 {Menu.map((item, index) => (
                     <Link href={item.path} key={item.id}>
