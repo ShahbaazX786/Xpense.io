@@ -1,18 +1,19 @@
 'use client';
 
 import { UserButton } from "@clerk/nextjs";
-import { Info, LayoutGrid, PiggyBank, ReceiptText, ShieldCheck } from "lucide-react";
+import { CircleDollarSign, Home, Info, LayoutGrid, ReceiptText, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const SideNav = () => {
     const Menu = [
-        { id: 1, name: 'Dashboard', icon: LayoutGrid, path: '/dashboard' },
-        { id: 2, name: 'Budget', icon: PiggyBank, path: 'dashboard/budget' },
-        { id: 3, name: 'Expenses', icon: ReceiptText, path: 'dashboard/expenses' },
-        { id: 4, name: 'Upgrade', icon: ShieldCheck, path: 'dashboard/upgrade' },
-        { id: 5, name: 'About', icon: Info, path: 'dashboard/about' },
+        { id: 1, name: 'Home', icon: Home, path: '/' },
+        { id: 2, name: 'Dashboard', icon: LayoutGrid, path: '/dashboard' },
+        { id: 3, name: 'Budget', icon: CircleDollarSign, path: '/dashboard/budget' },
+        { id: 4, name: 'Expenses', icon: ReceiptText, path: '/dashboard/expenses' },
+        { id: 5, name: 'Upgrade', icon: ShieldCheck, path: '/dashboard/upgrade' },
+        { id: 6, name: 'About', icon: Info, path: '/dashboard/about' },
     ]
 
     const pathName = usePathname();
