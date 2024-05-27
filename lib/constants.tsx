@@ -12,8 +12,6 @@ import { FaLinkedin } from "react-icons/fa";
 
 import { FcComboChart, FcDataEncryption, FcMoneyTransfer, FcOnlineSupport, FcPlanner } from "react-icons/fc";
 import { FcCurrencyExchange } from "react-icons/fc";
-import { DollarSign } from "lucide-react";
-
 
 // Footer TechStack
 export const TechStack = [
