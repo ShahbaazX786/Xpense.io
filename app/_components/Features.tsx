@@ -1,16 +1,15 @@
 import CustomCard from '@/components/ui/CustomCard';
-import { FeatureList } from '@/lib/constants';  
+import { FeatureList } from '@/lib/constants';
 
 const Features = () => {
     return (
-        <section className="light:bg-gradient-to-tr from-blue-600 via-blue-300 to-green-400 dark:bg-gray-900  text-white dark:text-white py-10">
+        <section className="bg-gradient-to-tr from-[#ffefba] to-[#ffeeee] dark:bg-gradient-to-tr dark:from-background dark:to-background  light:text-white dark:text-white py-10">
             <div className="container">
-                <div className="mx-auto max-w-xl text-center">
-                    <h2 className="text-3xl font-bold sm:text-4xl mt-8">Upgrade Your Financial Game</h2>
+                <div className="mx-auto max-w-2xl text-center">
+                    <h2 className="text-3xl font-bold sm:text-5xl mt-8">Upgrade Your Financial Game</h2>
 
-                    <p className="mt-4 text-gray-300">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur aliquam doloribus
-                        nesciunt eos fugiat. Vitae aperiam fugit consequuntur saepe laborum.
+                    <p className="mt-4 text-gray-600">
+                        Manage your Money like a pro with the following features.
                     </p>
                 </div>
 
