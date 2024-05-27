@@ -10,6 +10,9 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 
+import { DollarSign } from 'lucide-react';
+
+
 // Footer TechStack
 export const TechStack = [
   {
@@ -117,7 +120,7 @@ export const QuickLinks = [
   ],
 ] as const;
 
-
+// faqs
 export const Faqs = [
   {
     question: 'What is Expense.io',
@@ -141,7 +144,7 @@ export const Faqs = [
   },
 ] as const;
 
-
+// Membership information
 export const MembershipDetails = [
   {
     type: 'Starter',
@@ -167,3 +170,43 @@ export const MembershipDetails = [
     ]
   }
 ] as const;
+
+// Features
+export const FeatureList = [
+  {
+    id: 1,
+    title: 'Digital Campaign',
+    desc: 'lorem loremloremloremloremloremloremloremloremlorem',
+    icon: <DollarSign />
+  },
+  {
+    id: 2,
+    title: 'Digital Campaign',
+    desc: 'lorem loremloremloremloremloremloremloremloremlorem',
+    icon: <DollarSign />
+  },
+  {
+    id: 3,
+    title: 'Digital Campaign',
+    desc: 'lorem loremloremloremloremloremloremloremloremlorem',
+    icon: <DollarSign />
+  },
+  {
+    id: 4,
+    title: 'Digital Campaign',
+    desc: 'lorem loremloremloremloremloremloremloremloremlorem',
+    icon: <DollarSign />
+  },
+  {
+    id: 5,
+    title: 'Digital Campaign',
+    desc: 'lorem loremloremloremloremloremloremloremloremlorem',
+    icon: <DollarSign />
+  },
+  {
+    id: 6,
+    title: 'Digital Campaign',
+    desc: 'lorem loremloremloremloremloremloremloremloremlorem',
+    icon: <DollarSign />
+  },
+] as const
