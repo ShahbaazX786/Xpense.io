@@ -11,7 +11,9 @@ const CustomCard = ({ title, desc, icon }: any) => {
         <Card className='hover:scale-105 hover:drop-shadow-lg hover:shadow-white transition-all ease-linear dark:hover:shadow-purple-400 dark:drop-shadow-2xl'>
             <CardHeader>
                 <CardTitle>
-                    {icon}
+                    <p className="text-6xl">
+                        {icon}
+                    </p>
                 </CardTitle>
             </CardHeader>
             <CardContent className='font-bold text-xl'>
