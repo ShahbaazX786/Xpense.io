@@ -10,7 +10,9 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 
-import { DollarSign } from 'lucide-react';
+import { FcComboChart, FcDataEncryption, FcMoneyTransfer, FcOnlineSupport, FcPlanner } from "react-icons/fc";
+import { FcCurrencyExchange } from "react-icons/fc";
+import { DollarSign } from "lucide-react";
 
 
 // Footer TechStack
@@ -175,38 +177,38 @@ export const MembershipDetails = [
 export const FeatureList = [
   {
     id: 1,
-    title: 'Digital Campaign',
-    desc: 'lorem loremloremloremloremloremloremloremloremlorem',
-    icon: <DollarSign />
+    title: 'Budgeting',
+    desc: "Plan and track your spending to stay within your financial limits and meet your savings goals.",
+    icon: <FcCurrencyExchange />
   },
   {
     id: 2,
-    title: 'Digital Campaign',
-    desc: 'lorem loremloremloremloremloremloremloremloremlorem',
-    icon: <DollarSign />
+    title: 'Expense Tracking',
+    desc: 'Easily record and categorize your spending for clear financial insights.',
+    icon: <FcMoneyTransfer />
   },
   {
     id: 3,
-    title: 'Digital Campaign',
-    desc: 'lorem loremloremloremloremloremloremloremloremlorem',
-    icon: <DollarSign />
+    title: 'Comparative Analysis',
+    desc: 'Gain deep insights into your spending patterns with comprehensive expenditure analytics.',
+    icon: <FcComboChart />
   },
   {
     id: 4,
-    title: 'Digital Campaign',
-    desc: 'lorem loremloremloremloremloremloremloremloremlorem',
-    icon: <DollarSign />
+    title: 'Custom Reports',
+    desc: 'Generate detailed custom reports to examine specific areas of your spending in depth.',
+    icon: <FcPlanner />
   },
   {
     id: 5,
-    title: 'Digital Campaign',
-    desc: 'lorem loremloremloremloremloremloremloremloremlorem',
-    icon: <DollarSign />
+    title: 'Data Encryption',
+    desc: 'Secure your financial information with robust data encryption, ensuring your personal details and transactions remain confidential.',
+    icon: <FcDataEncryption />
   },
   {
     id: 6,
-    title: 'Digital Campaign',
-    desc: 'lorem loremloremloremloremloremloremloremloremlorem',
-    icon: <DollarSign />
+    title: '24/7 Support',
+    desc: 'Receive timely assistance and guidance from our dedicated customer support team whenever you have questions or encounter issues.',
+    icon: <FcOnlineSupport />
   },
 ] as const
