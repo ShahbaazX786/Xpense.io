@@ -3,8 +3,8 @@ import { Faqs as questions } from "@/lib/constants";
 
 const FAQ = () => {
     return (
-        <section id="faq">
-            <h2 className="font-bold text-3xl text-center">Frequently Asked Questions</h2>
+        <section id="faq" className="my-8">
+            <h2 className="font-bold text-5xl text-center">Frequently Asked Questions</h2>
             <div className="container shadow-md border my-8">
                 {
                     questions.map((faq, index) => (
