@@ -1,14 +1,22 @@
 import { QuickLinks, Socials, TechStack } from "@/lib/constants";
 import Link from "next/link";
 import CustomTooltip from "@/components/ui/CustomTooltip";
+import Image from "next/image";
 
 const Footer = () => {
     return (
-        <div>
+        <div className="border-t">
             <footer className="bg-white">
                 <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
                     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
                         <div className="mx-auto max-w-sm lg:max-w-none">
+                            <div className="flex flex-row justify-start items-center gap-4">
+                                <Image src={'/Logo.svg'}
+                                    alt='Footer-Logo'
+                                    width={50}
+                                    height={50} />
+                                <span className="font-bold text-3xl">Expense.io</span>
+                            </div>
                             <p className="mt-4 text-center text-gray-500 lg:text-left lg:text-lg">
                                 Comprehensive Budget Management at Your Fingertips. Effortlessly add, edit, and analyze expenses while keeping track of every detail. Elevate your financial strategy with our advanced budgeting tool.
                             </p>
