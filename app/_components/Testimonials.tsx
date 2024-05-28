@@ -13,11 +13,11 @@ const Testimonials = () => {
 
                     <div className="mt-8 [column-fill:_balance] sm:columns-2 sm:gap-6 lg:columns-3 lg:gap-8 bg-blue-100 rounded-md">
                         {TestimonialData.map((item) => (
-                            <div className="mb-8 sm:break-inside-avoid" key={item.id}>
+                            <div className="mb-8 sm:break-inside-avoid hover:scale-105 transition-all ease-linear cursor-pointer hover:drop-shadow-xl shadow-sm" key={item.id}>
                                 <blockquote className="rounded-lg bg-gray-50 p-6 shadow-sm sm:p-8">
                                     <div className="flex items-center gap-4">
                                         <Image src={item.avatar} alt="user-avatar-item.name" width={60} height={60} className="rounded-full" />
-                                        <div>
+                                        <div className="flex flex-col justify-center items-start">
                                             <div className="flex justify-center gap-0.5 text-transparent">
                                                 {
                                                     Array.from({ length: item.rating }).map((_, index) => (
