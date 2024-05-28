@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Hero = () => {
     return (
-        <section className="bg-zinc-50">
+        <section className="bg-zinc-50 py-16">
             <div className="mx-auto w-full px-4 lg:flex min-h-[400px] md:h-auto lg:h-auto flex justify-center items-center">
                 <div className="flex flex-col gap-2 text-center justify-center items-center p-28">
                     <p className="text-3xl font-extrabold sm:text-6xl">Manage Your Expense Easily<strong className="font-extrabold text-primary sm:block mt-2"> Full Insights Of Your Money.</strong></p>
