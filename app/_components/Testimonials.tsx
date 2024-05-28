@@ -1,74 +1,8 @@
+import { TestimonialData } from "@/lib/constants";
 import { StarIcon } from "lucide-react";
 import Image from "next/image";
 
 const Testimonials = () => {
-
-    const TestimonialData = [
-        {
-
-            id: 1,
-            avatar: 'https://i.pravatar.cc/?img=3',
-            rating: 5,
-            name: 'Jaxon Storm',
-            review: 'Expense.io has revolutionized the way our company handles expense reports. The user interface is intuitive and the automation features save us hours every week'
-        },
-        {
-            id: 2,
-            avatar: 'https://i.pravatar.cc/?img=7',
-            rating: 5,
-            name: 'Milo Hawk',
-            review: 'Game-changer'
-        },
-        {
-            id: 3,
-            avatar: 'https://i.pravatar.cc/?img=5',
-            rating: 4,
-            name: 'Ezra Phoenix',
-            review: "We've been using Expense.io for six months now, and it's made our expense management much more efficient. The reporting tools are especially useful for our finance team. We can generate detailed expense reports with just a few clicks, which saves us a lot of time. Additionally, the automated alerts help us stay on top of any unusual expenses"
-        },
-        {
-            id: 4,
-            avatar: 'https://i.pravatar.cc/?img=12',
-            rating: 4,
-            name: 'Henry Mitchell',
-            review: 'Absolutely love Expense.io! It simplifies our reimbursement process and integrates seamlessly with our accounting software. Highly recommended!'
-        },
-        {
-            id: 5,
-            avatar: 'https://i.pravatar.cc/?img=17',
-            rating: 5,
-            name: 'Paul Starr',
-            review: 'Expense.io has revolutionized the way our company handles expense reports. The user interface is intuitive and the automation features save us hours every week. I particularly love the real-time tracking feature which keeps us up-to-date with our spending. Plus, the seamless integration with our accounting software makes the whole process smooth and efficient.'
-        },
-        {
-            id: 6,
-            avatar: 'https://i.pravatar.cc/?img=20',
-            rating: 4,
-            name: 'Grace Hamilton',
-            review: 'A great tool for businesses of any size. Expense.io has helped us stay organized and compliant with our expense policies.'
-        },
-        {
-            id: 7,
-            avatar: 'https://i.pravatar.cc/?img=33',
-            rating: 5,
-            name: 'James Carter',
-            review: 'Worth every penny'
-        },
-        {
-            id: 8,
-            avatar: 'https://i.pravatar.cc/?img=36',
-            rating: 3,
-            name: 'Charlotte Reynolds',
-            review: "Using Expense.io has been mostly positive. It simplifies expense tracking and the receipt scanning is a nice feature. However, I've encountered a few issues with syncing across devices.Customer support is helpful, but sometimes slow to respond.It's a good tool, but not without its drawbacks"
-        },
-        {
-            id: 9,
-            avatar: 'https://i.pravatar.cc/?img=68',
-            rating: 5,
-            name: 'Benjamin Foster',
-            review: 'Switching to Expense.io was the best decision we made this year. The setup was quick and easy, and the platform is very user-friendly. We particularly appreciate the customization options available, which allow us to tailor the system to our specific needs. The customer support has also been incredibly responsive and helpful.'
-        },
-    ]
     return (
         <div>
             <section className="bg-blue-100">
