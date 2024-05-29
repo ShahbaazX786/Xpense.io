@@ -1,7 +1,6 @@
 import { DarkModeToggleButton } from "@/app/_components/DarkModeToggleButton";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { UserButton } from "@clerk/nextjs";
 import { Search } from "lucide-react";
 
 const DashboardHeader = () => {
@@ -15,7 +14,6 @@ const DashboardHeader = () => {
             </div>
             <div className="flex justify-center items-center gap-3">
                 <DarkModeToggleButton />
-                <UserButton />
             </div>
         </div>
     )
