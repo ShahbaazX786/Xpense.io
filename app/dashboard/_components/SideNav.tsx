@@ -1,12 +1,14 @@
 'use client';
 
-import { UserButton } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 import { CircleDollarSign, Home, Info, LayoutGrid, ReceiptText, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import UserProfileCard from "./UserProfileCard";
 
 const SideNav = () => {
+    const { user } = useUser();
     const Menu = [
         { id: 1, name: 'Home', icon: Home, path: '/' },
         { id: 2, name: 'Dashboard', icon: LayoutGrid, path: '/dashboard' },
@@ -18,7 +20,7 @@ const SideNav = () => {
 
     const pathName = usePathname();
     return (
-        <div className="h-screen p-5 border shadow-md">
+        <div className="h-screen p-5 border shadow-md flex flex-col justify-start items-stretch">
             <div className='flex justify-start items-center gap-2'>
                 <Image
                     src={'/Logo.svg'}
@@ -36,9 +38,8 @@ const SideNav = () => {
                     </Link>
                 ))}
             </div>
-            <div className="fixed p-5 flex gap-2 bottom-10 items-center">
-                <span>Profile</span>
-                <UserButton />
+            <div className="mt-auto mb-0">
+                <UserProfileCard />
             </div>
         </div >
     )
