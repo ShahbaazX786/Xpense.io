@@ -8,10 +8,10 @@ const UserProfileCard = () => {
             <div className="flex gap-2 items-center justify-start w-full">
                 <UserButton />
                 <div className='flex flex-col justify-center items-center'>
-                    <span className='font-semibold text-base text-gray-600'>
+                    <span className='font-semibold text-base text-gray-700'>
                         {user?.fullName}
                     </span>
-                    <span className='text-sm font-bold ring-1 ring-purple-400'>Base Plan</span>
+                    <span className='text-sm font-bold text-gray-500'>Base Plan</span>
                 </div>
             </div>
         </div>
