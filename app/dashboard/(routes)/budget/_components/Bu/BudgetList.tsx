@@ -25,11 +25,16 @@ const BudgetList = () => {
   const getBudgetList = async () => {
     try {
       const result = await db.select({
-        ...getTableColumns(Budgets), totalSpend: sql`sum(${Expenses.amount})`.mapWith(Number),
-        totalItem: sql`count(${Expenses.id})`.mapWith(Number)
-      }).from(Budgets).leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId)).where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress!)).groupBy(Budgets.id).orderBy(desc(Budgets.id));
+        ...getTableColumns(Budgets),
+        totalSpend: sql `sum(${Expenses.amount})`.mapWith(Number),
+        totalItem: sql `count(${Expenses.id})`.mapWith(Number)
+      }).from(Budgets)
+      .leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
+      .where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress!))
+      .groupBy(Budgets.id)
+      .orderBy(desc(Budgets.id));
 
-      if (result) {
+      if (result && result.length > 0) {
         setBudgetList(result as []);
       }
     } catch (error) {
