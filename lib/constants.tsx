@@ -148,7 +148,7 @@ export const Faqs = [
 export const MembershipDetails = [
   {
     type: 'Starter',
-    price: '0$',
+    price: 0,
     features: [
       'Data Encryption',
       'Add Budgets',
@@ -159,7 +159,7 @@ export const MembershipDetails = [
   },
   {
     type: 'Pro',
-    price: '30$',
+    price: 30,
     features: [
       'Data Encryption',
       'Add Budgets',
