@@ -13,7 +13,7 @@ const SideNav = () => {
         { id: 1, name: 'Home', icon: Home, path: '/' },
         { id: 2, name: 'Dashboard', icon: LayoutGrid, path: '/dashboard' },
         { id: 3, name: 'Budget', icon: CircleDollarSign, path: '/dashboard/budget' },
-        { id: 4, name: 'Expenses', icon: ReceiptText, path: '/dashboard/expenses' },
+        { id: 4, name: 'Expenses', icon: ReceiptText, path: '/dashboard/expense' },
         { id: 5, name: 'Upgrade', icon: ShieldCheck, path: '/dashboard/upgrade' },
         { id: 6, name: 'About', icon: Info, path: '/dashboard/about' },
     ]
