@@ -51,7 +51,7 @@ const ExpenseListTable = ({ data, refreshData }: any) => {
                             <TableCell>{expense.amount}</TableCell>
                             <TableCell>{expense.createdBy}</TableCell>
                             <TableCell className="text-right">{expense.createdAt}</TableCell>
-                            <Button variant={"destructive"} size={"icon"} onClick={() => deleteExpense(expense.id)}><Trash /></Button>
+                            <Button className="float-right" variant={"destructive"} size={"icon"} onClick={() => deleteExpense(expense.id)}><Trash /></Button>
                         </TableRow>
                     ))}
                 </TableBody>
