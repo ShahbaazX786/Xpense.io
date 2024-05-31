@@ -7,6 +7,7 @@ import { desc, eq } from "drizzle-orm";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
 import ExpenseListTable from "./[id]/_components/ExpenseListTable";
+import PreviousButton from "../../_components/PreviousButton";
 
 const ExpenseComponent = () => {
     const { user } = useUser();
@@ -36,7 +37,9 @@ const ExpenseComponent = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container p-10">
+            <PreviousButton />
+            <h2 className='font-bold text-3xl'>My Expenses</h2>
             <ExpenseListTable data={ExpenseList} refreshData={() => getExpenseList()} />
         </div>
     )
