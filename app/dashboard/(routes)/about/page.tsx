@@ -3,7 +3,7 @@ import PreviousButton from "../../_components/PreviousButton";
 
 const About = () => {
     return (
-        <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
+        <div className="2xl:container 2xl:mx-auto lg:py-10 lg:px-10 md:py-12 md:px-6 py-9 px-4">
             <div className='flex justify-start items-center mb-5'>
                 <PreviousButton />
                 <h2 className='font-bold text-3xl'>About Us</h2>
