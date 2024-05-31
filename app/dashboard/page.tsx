@@ -64,6 +64,7 @@ const Dashboard = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 h-full">
                 <div className="md:col-span-2 mt-8 shadow-sm">
                     <BarCharts data={BudgetList} />
+                    <h2 className="font-bold text-lg mt-10">Latest Expenses</h2>
                     <ExpenseListTable data={ExpenseList} refreshData={() => getBudgetList()} />
                 </div>
                 <div className="mt-8 h-full max-h-[500px] overflow-y-auto grid gap-5">
