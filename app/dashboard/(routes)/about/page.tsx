@@ -1,10 +1,14 @@
 import Image from "next/image";
+import PreviousButton from "../../_components/PreviousButton";
 
 const About = () => {
     return (
         <div className="2xl:container 2xl:mx-auto lg:py-16 lg:px-20 md:py-12 md:px-6 py-9 px-4">
-            <div className="lg:w-10/12 w-full">
-                <p className="font-normal text-2xl leading-3 text-indigo-700 hover:text-indigo-800 cursor-pointer">About</p>
+            <div className='flex justify-start items-center mb-5'>
+                <PreviousButton />
+                <h2 className='font-bold text-3xl'>About Us</h2>
+            </div>
+            <div className="lg:w-10/12 w-full mt-4">
                 <h2 className="xl:w-8/12 lg:w-10/12 w-full font-bold text-gray-800 lg:text-4xl text-3xl lg:leading-10 leading-9 mt-2">We are here to make great design accessible and delightfull for everyone</h2>
                 <p className="font-normal text-base leading-6 text-gray-600 mt-6">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.In the first place we have granted to God, and by this our present charter confirmed for us and our heirs forever that the English Church shall be free, and shall have her rights entire,</p>
             </div>
@@ -22,9 +26,9 @@ const About = () => {
                     <p className="font-normal text-base leading-6 text-gray-600 mt-6">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum.In the first place we have granted to God, and by this our present charter confirmed for us and our heirs forever that the English Church shall be free, and shall have her rights entire, and her liberties inviolate; and we will that it be thus observed; which is apparent from</p>
                 </div>
                 <div className="lg:flex items-center w-full lg:w-1/2 ">
-                    <Image quality={100} priority className="lg:block hidden w-full" src="https://i.ibb.co/2kxWpNm/Group-740.png" width={1200} height={1200} alt="people discussing on board" />
-                    <Image quality={100} priority className="lg:hidden sm:block hidden w-full h-3/4" src="https://i.ibb.co/ZLgK3NQ/Group-788.png" width={1200} height={1200} alt="people discussing on board" />
-                    <Image quality={100} priority className="sm:hidden block w-full" src="https://i.ibb.co/9g2R7Xr/Group-803.png" width={1200} height={1200} alt="people discussing on board" />
+                    <Image quality={100} priority className="lg:block hidden w-full" src="https://i.ibb.co/2kxWpNm/Group-741.png" width={1200} height={1200} alt="people discussing on board" />
+                    <Image quality={100} priority className="lg:hidden sm:block hidden w-full h-3/4" src="https://i.ibb.co/ZLgK3NQ/Group-781.png" width={1200} height={1200} alt="people discussing on board" />
+                    <Image quality={100} priority className="sm:hidden block w-full" src="https://i.ibb.co/9g2R7Xr/Group-801.png" width={1200} height={1200} alt="people discussing on board" />
                 </div>
             </div>
         </div>
