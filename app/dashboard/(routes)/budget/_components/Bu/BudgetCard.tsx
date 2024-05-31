@@ -26,8 +26,9 @@ const BudgetCard = ({ budget }: { budget: BudgetCardProps }) => {
                         <p className="text-base text-slate-800">Spent: ${budget.totalSpend ? budget.totalSpend : 0}</p>
                         <p className="text-base text-slate-800">Remaining: ${parseInt(budget.amount) - budget.totalSpend}</p>
                     </div>
-                    <div className="w-full bg-slate-300 rounded-full h-2">
-                        <div className=" bg-primary rounded-full h-2" style={{ width: `${calculateProgress()}%` }}></div>
+                    <div className="w-full bg-slate-300 rounded-full h-5 relative hover:text-white">
+                        <span className="absolute left-1/2 right-1/2 text-sm top-0 font-bold text-black">{calculateProgress() + '%'}</span>
+                        <div className=" bg-primary rounded-full h-5" style={{ width: `${calculateProgress()}%` }}></div>
                     </div>
                 </div>
             </div>
