@@ -150,16 +150,25 @@ export const MembershipDetails = [
     type: 'Starter',
     price: 0,
     features: [
-      'Data Encryption',
       'Add Budgets',
       'Add Expenses',
       'Utilize Dashboard',
-      'Customer Support',
     ]
   },
   {
     type: 'Pro',
-    price: 30,
+    price: 49.99,
+    features: [
+      'Data Encryption',
+      'Add Budgets',
+      'Add Expenses',
+      'Analytics Tab unlocked',
+      'Dark Mode',
+    ]
+  },
+  {
+    type: 'Pro+',
+    price: 99.99,
     features: [
       'Data Encryption',
       'Add Budgets',
