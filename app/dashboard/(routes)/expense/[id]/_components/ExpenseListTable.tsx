@@ -30,7 +30,6 @@ const ExpenseListTable = ({ data, refreshData }: any) => {
     }
     return (
         <div className="mt-4">
-            <h2 className="font-bold text-lg mb-4">Latest Expenses</h2>
             <Table>
                 <TableCaption >A list of your recent invoices.</TableCaption>
                 <TableHeader>
@@ -46,7 +45,7 @@ const ExpenseListTable = ({ data, refreshData }: any) => {
                 <TableBody>
                     {data.map((expense: any, index: any) => (
                         <TableRow key={index}>
-                            <TableCell>{expense.id}</TableCell>
+                            <TableCell>{index + 1}</TableCell>
                             <TableCell className="font-medium">{expense.name}</TableCell>
                             <TableCell>{expense.amount}</TableCell>
                             <TableCell>{expense.createdBy}</TableCell>
