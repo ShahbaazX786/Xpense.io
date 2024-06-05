@@ -29,7 +29,7 @@ const Dashboard = () => {
             }).from(Budgets).leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId)).where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress!)).groupBy(Budgets.id).orderBy(desc(Budgets.id));
 
             if (result && result.length > 0) {
-                setBudgetList(result as []);
+                setBudgetList(result as any);
             }
         } catch (error) {
             toast.error('Oops something went wrong');
@@ -48,7 +48,7 @@ const Dashboard = () => {
             }).from(Budgets).rightJoin(Expenses, eq(Budgets.id, Expenses.budgetId)).where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress!)).orderBy(desc(Budgets.id));
 
             if (result && result.length > 0) {
-                setExpenseList(result as []);
+                setExpenseList(result as any);
             }
         } catch (error) {
             toast.error('Oops something went wrong');
@@ -64,21 +64,21 @@ const Dashboard = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 h-full">
                 <div className="md:col-span-3 xl:col-span-2 mt-8 shadow-sm border p-8 rounded-md">
                     <h2 className='font-bold text-lg mb-6'>Recent Activity</h2>
-                    <BarCharts  />
+                    <BarCharts budgetList={BudgetList} />
                 </div>
-                <div className="md:col-span-3 xl:col-span-1 shadow-sm border px-8 py-4 rounded-md mt-8 h-full max-h-[500px] overflow-y-auto grid">
+                <div className="md:col-span-3 xl:col-span-1 shadow-sm border px-4 py-4 rounded-md mt-8 h-auto overflow-y-auto grid">
                     <h2 className="font-bold text-lg">Recent Budgets</h2>
-                    <div className="flex flex-col gap-4 overflow-y-auto overflow-x-hidden">
-                    {BudgetList.map((budget, index) => (
-                        <BudgetCard key={index} budget={budget} />
-                    ))}
+                    <div className="flex flex-col gap-4 h-full overflow-y-auto overflow-x-hidden">
+                        {BudgetList.map((budget, index) => (
+                            <BudgetCard key={index} budget={budget} />
+                        ))}
                     </div>
                 </div>
             </div>
-                <div className="border p-8 mt-4">
-                    <h2 className="font-bold text-lg">Latest Expenses</h2>
-                    <ExpenseListTable data={ExpenseList} refreshData={() => getBudgetList()} />
-                </div>
+            <div className="border p-8 mt-4 shadow-lg rounded-md">
+                <h2 className="font-bold text-lg">Latest Expenses</h2>
+                <ExpenseListTable data={ExpenseList} refreshData={() => getBudgetList()} />
+            </div>
         </div>
     )
 }
