@@ -21,7 +21,7 @@ const SideNav = () => {
     const pathName = usePathname();
     return (
         <div className="h-screen p-5 border shadow-md flex flex-col justify-start items-stretch">
-            <div className='flex justify-start items-center gap-2'>
+            <div className='flex text-teal-600 justify-start items-center gap-2'>
                 <Image
                     src={'/Logo.svg'}
                     alt='Logo'
