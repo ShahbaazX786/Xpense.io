@@ -15,7 +15,7 @@ const Footer = () => {
                                     alt='Footer-Logo'
                                     width={50}
                                     height={50} />
-                                <span className="font-bold text-3xl">Expense.io</span>
+                                <span className="font-bold text-teal-600 text-3xl">Expense.io</span>
                             </div>
                             <p className="mt-4 text-center text-gray-500 lg:text-left lg:text-lg">
                                 Comprehensive Budget Management at Your Fingertips. Effortlessly add, edit, and analyze expenses while keeping track of every detail. Elevate your financial strategy with our advanced budgeting tool.

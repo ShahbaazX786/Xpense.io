@@ -11,7 +11,7 @@ const Header = () => {
                     alt='Logo'
                     width={50}
                     height={50} />
-                <span className='font-bold text-xl'>
+                <span className='font-bold text-teal-600 text-xl'>
                     Expense.io
                 </span>
             </div>
