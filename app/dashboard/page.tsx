@@ -28,7 +28,7 @@ const Dashboard = () => {
                 totalItem: sql`count(${Expenses.id})`.mapWith(Number)
             }).from(Budgets).leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId)).where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress!)).groupBy(Budgets.id).orderBy(desc(Budgets.id));
 
-            if (result) {
+            if (result && result.length > 0) {
                 setBudgetList(result as []);
             }
         } catch (error) {
@@ -47,7 +47,7 @@ const Dashboard = () => {
                 createdAt: Expenses.createdAt
             }).from(Budgets).rightJoin(Expenses, eq(Budgets.id, Expenses.budgetId)).where(eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress!)).orderBy(desc(Budgets.id));
 
-            if (result) {
+            if (result && result.length > 0) {
                 setExpenseList(result as []);
             }
         } catch (error) {
