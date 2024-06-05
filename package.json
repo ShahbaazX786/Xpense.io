@@ -21,6 +21,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "crisp-sdk-web": "^1.0.25",
     "drizzle-orm": "^0.30.10",
     "emoji-picker-react": "^4.9.2",
     "lucide-react": "^0.373.0",
