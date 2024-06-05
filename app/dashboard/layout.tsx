@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import SideNav from "./_components/SideNav";
 import DashboardHeader from "./_components/DashboardHeader";
+import DashboardFooter from "./_components/DashboardFooter";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
     const { user } = useUser();
@@ -37,6 +38,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
             <div className="md:ml-64">
                 <DashboardHeader />
                 {children}
+                <DashboardFooter />
             </div>
         </div>
     )
