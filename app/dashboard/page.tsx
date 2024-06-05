@@ -57,23 +57,28 @@ const Dashboard = () => {
     }
 
     return (
-        <div className="p-10">
+        <div className="p-10 w-full">
             <h2 className="font-bold text-3xl">Hi, {user?.fullName} <span className="animate-bounce">👋</span></h2>
             <p className="text-gray-500">Here&apos;s what happening with your money, Let&apos;s manage your Expense</p>
             <InfoCard data={BudgetList} />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5 h-full">
-                <div className="md:col-span-2 mt-8 shadow-sm">
-                    <BarCharts data={BudgetList} />
-                    <h2 className="font-bold text-lg mt-10">Latest Expenses</h2>
-                    <ExpenseListTable data={ExpenseList} refreshData={() => getBudgetList()} />
+                <div className="md:col-span-3 xl:col-span-2 mt-8 shadow-sm border p-8 rounded-md">
+                    <h2 className='font-bold text-lg mb-6'>Recent Activity</h2>
+                    <BarCharts  />
                 </div>
-                <div className="mt-8 h-full max-h-[500px] overflow-y-auto grid gap-5">
+                <div className="md:col-span-3 xl:col-span-1 shadow-sm border px-8 py-4 rounded-md mt-8 h-full max-h-[500px] overflow-y-auto grid">
                     <h2 className="font-bold text-lg">Recent Budgets</h2>
+                    <div className="flex flex-col gap-4 overflow-y-auto overflow-x-hidden">
                     {BudgetList.map((budget, index) => (
                         <BudgetCard key={index} budget={budget} />
                     ))}
+                    </div>
                 </div>
             </div>
+                <div className="border p-8 mt-4">
+                    <h2 className="font-bold text-lg">Latest Expenses</h2>
+                    <ExpenseListTable data={ExpenseList} refreshData={() => getBudgetList()} />
+                </div>
         </div>
     )
 }
