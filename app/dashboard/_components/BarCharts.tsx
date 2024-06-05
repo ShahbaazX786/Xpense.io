@@ -2,23 +2,17 @@ import { Bar, BarChart, Legend, ResponsiveContainer, Tooltip, XAxis, YAxis } fro
 
 const BarCharts = ({ budgetList }: any) => {
     return (
-        <>
-            <h2 className='font-bold text-lg mb-6'>Recent Activity</h2>
-            <div className='border rounded-lg p-5'>
-                <ResponsiveContainer width={'90%'} height={300}>
-                    <BarChart
-                        data={budgetList}
-                    >
-                        <XAxis dataKey={'name'} />
-                        <YAxis />
-                        <Tooltip />
-                        <Legend />
-                        <Bar dataKey={'totalSpend'} stackId={'a'} fill='#4845d2' />
-                        <Bar dataKey={'amount'} stackId={'a'} fill='#c3c2ff' />
-                    </BarChart>
-                </ResponsiveContainer>
-            </div>
-        </>
+        <ResponsiveContainer width="100%" height="90%">
+            <BarChart width={300} height={200}
+                data={budgetList}>
+                <XAxis dataKey={'name'} />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey={'totalSpend'} stackId={'1'} stroke='#2563eb' fill='#4845d2' />
+                <Bar dataKey={'amount'} stackId={'1'} stroke='#2563eb' fill='#c293f0' />
+            </BarChart>
+        </ResponsiveContainer>
     )
 }
 
