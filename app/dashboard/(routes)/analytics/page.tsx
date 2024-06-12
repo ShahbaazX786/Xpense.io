@@ -12,6 +12,7 @@ import RadialCharts from '../../_components/RadialCharts';
 import GridItem from '../../_components/GridItem';
 import PreviousButton from '../../_components/PreviousButton';
 import RadarChart from '../../_components/RadarChart';
+import TreeCharts from '../../_components/TreeCharts';
 
 const Analytics = () => {
     const { user } = useUser();
@@ -56,7 +57,7 @@ const Analytics = () => {
                         <RadarChart budgetList={BudgetList} />
                     </GridItem>
                     <GridItem title={"TreeMap Chart"}>
-                        <BarCharts budgetList={BudgetList} />
+                        <TreeCharts budgetList={BudgetList} />
                     </GridItem>
                     <GridItem title={"Bar Chart"}>
                         <BarCharts budgetList={BudgetList} />
