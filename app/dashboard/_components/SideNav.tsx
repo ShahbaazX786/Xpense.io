@@ -5,6 +5,7 @@ import { CircleDollarSign, Home, Info, LayoutGrid, ReceiptText, ShieldCheck } fr
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { BsGraphUpArrow } from "react-icons/bs";
 import UserProfileCard from "./UserProfileCard";
 
 const SideNav = () => {
@@ -14,8 +15,9 @@ const SideNav = () => {
         { id: 2, name: 'Dashboard', icon: LayoutGrid, path: '/dashboard' },
         { id: 3, name: 'Budget', icon: CircleDollarSign, path: '/dashboard/budget' },
         { id: 4, name: 'Expenses', icon: ReceiptText, path: '/dashboard/expense' },
-        { id: 5, name: 'Upgrade', icon: ShieldCheck, path: '/dashboard/upgrade' },
-        { id: 6, name: 'About', icon: Info, path: '/dashboard/about' },
+        { id: 5, name: 'Analytics', icon: BsGraphUpArrow, path: '/dashboard/analytics' },
+        { id: 6, name: 'Upgrade', icon: ShieldCheck, path: '/dashboard/upgrade' },
+        { id: 7, name: 'About', icon: Info, path: '/dashboard/about' },
     ]
 
     const pathName = usePathname();
