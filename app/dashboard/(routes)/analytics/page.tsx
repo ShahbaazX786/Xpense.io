@@ -38,6 +38,7 @@ const Analytics = () => {
 
     return (
         <div className='container'>
+            <PreviousButton />
             <h2 className=' text-center font-bold text-3xl my-4'>Analytics</h2>
             <div className='flex flex-col min-h-screen items-start justify-start px-2 md:px-4 xl:px-8 py-10'>
                 <div className='grid xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1 w-full gap-10'>
