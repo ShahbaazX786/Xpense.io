@@ -46,16 +46,16 @@ const Analytics = () => {
                     <GridItem title={"Bar Chart"}>
                         <BarCharts budgetList={BudgetList} />
                     </GridItem>
-                    <GridItem title={"Bar Chart"}>
+                    <GridItem title={"Area Chart"}>
                         <AreaCharts budgetList={BudgetList} />
                     </GridItem>
-                    <GridItem title={"Bar Chart"}>
+                    <GridItem title={"Radial Chart"}>
                         <RadialCharts budgetList={BudgetList} />
                     </GridItem>
-                    <GridItem title={"Bar Chart"}>
+                    <GridItem title={"Radar Chart"}>
                         <RadarChart budgetList={BudgetList} />
                     </GridItem>
-                    <GridItem title={"Bar Chart"}>
+                    <GridItem title={"TreeMap Chart"}>
                         <BarCharts budgetList={BudgetList} />
                     </GridItem>
                     <GridItem title={"Bar Chart"}>
